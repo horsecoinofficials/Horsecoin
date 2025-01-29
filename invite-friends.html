@@ -1,86 +1,46 @@
-<!DOCTYPE html>
-<html>
-
+!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="./assets/3.4.5"></script>
-  <style>
-    body,
-    html {
-      height: 100%;
-      margin: 0;
-    }
-
-    .full-height {
-      height: 108%;
-    }
-  </style>
-  <link rel="stylesheet" href="./assets/css/style-2.css">
-  <link rel="stylesheet" href="./assets/css/responsive-1.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invite Friends</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="material/css/styles.css">
+    <link rel="stylesheet" href="material/css/st.css">
 </head>
+<body>
+    
 
-<body class="boost">
-  <div class=" text-white p-4 rounded-lg max-w-md mx-auto full-height flex flex-col">
-    <div class="flex justify-between items-center mb-4">
-      <a href="index.html">
-        <svg width="35px" height="35px" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M22 11.9299H2" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          </path>
-          <path
-            d="M8.00009 19L2.84009 14C2.5677 13.7429 2.35071 13.433 2.20239 13.0891C2.05407 12.7452 1.97754 12.3745 1.97754 12C1.97754 11.6255 2.05407 11.2548 2.20239 10.9109C2.35071 10.567 2.5677 10.2571 2.84009 10L8.00009 5"
-            stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-        </svg>
-      </a>
-    </div>
-    <div class="flex-grow overflow-auto">
-      <h2 class="text-center text-2xl font-bold mb-2">Invite friends!</h2>
-      <p class="text-center mb-4">You and your friend will receive bonuses</p>
-      <div class="space-y-4">
-        <div class="bg-slate-900 p-4 flex items-center rounded-3xl shadow-lg">
-          <img src="./assets/images/f.png" width="50px" height="50px" alt="gift" class="w-12 h-12 mr-4">
-          <div>
-            <p class="font-bold">Invite a friend</p>
-            <p class="text-yellow-400">+3,000 Horse Coin for you and your friend</p>
-          </div>
+    <div class="frens-invite">
+        <div class="frens-invite-button">
+            <input type="text" value="https://t.me/DOGSclon_bot" id="link" readonly>
+            <button id="copyButton">Copy Link</button>
         </div>
-      </div>
-
-      <h3 class="mt-6 mb-2">List of your friends (0)</h3>
-      <div class="space-y-2">
-        <div class="space-y-2"></div>
-      </div>
     </div>
-    <button id="inviteButton"
-      class="bg-slate-900 hover:bg-slate-900/95 text-white w-full py-6 mt-4 rounded-3xl shadow-lg flex items-center justify-center">
-      <span>Invite a friend</span>
-    </button>
-    <p id="copyMessage" class="text-center text-green-500 mt-4 hidden">Copy Success..!</p>
-  </div>
 
-  <script>
-
-    var chatId = "<?php echo isset($_GET['chat_id']) ? htmlspecialchars($_GET['chat_id']) : ''; ?>";
-
-    document.getElementById('inviteButton').addEventListener('click', function () {
-
-      const textToCopy = "https://t.me/share/url?url=https://t.me/HorseBits_bot?start=" + chatId + "&text=Join%20me%20in%20HorseCoin%20and%20start%20mining%20today!%20Let's%20earn%20together!";
-
-      navigator.clipboard.writeText(textToCopy).then(function () {
-        const copyMessage = document.getElementById('copyMessage');
-        copyMessage.classList.remove('hidden');
-        copyMessage.classList.add('block');
-
-        setTimeout(function () {
-          copyMessage.classList.remove('block');
-          copyMessage.classList.add('hidden');
-          window.location = "https://t.me/share/url?url=https://t.me/HorseBits_bot?start=" + chatId + "&text=Join%20me%20in%20HorseCoin%20and%20start%20mining%20today!%20Let's%20earn%20together!"
-        }, 2000);
-      }).catch(function (err) {
-        console.error('Error in copying text: ', err);
-      });
-    });
-  </script>
+    <nav class="bottom-nav">
+        <a href="home.html" class="nav-item">
+            <i class="fas fa-home"></i>
+            <span>HOME</span>
+        </a>
+        <a href="leaderboard.html" class="nav-item">
+            <i class="fas fa-trophy"></i>
+            <span>LEADERBOARD</span>
+        </a>
+        <a href="invite-friends.html" class="nav-item">
+            <i class="fas fa-user-friends"></i>
+            <span>FRIENDS</span>
+        </a>
+        <a href="task.html" class="nav-item">
+            <i class="fas fa-tasks"></i>
+            <span>TASKS</span>
+        </a>
+        <a href="balance.html" class="nav-item">
+            <i class="fas fa-wallet"></i>
+            <span>BALANCE</span>
+        </a>
+    </nav>
+    <script src="material/js/cojs.js"></script>
+    <script src="material/js/scripts.js"></script>
 </body>
-
 </html>
