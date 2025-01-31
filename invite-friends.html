@@ -29,14 +29,14 @@
             <p class="text-center mb-4">You and your friend will be receive bonuses</p>
             <div class="space-y-4">
                 <div class="bg-slate-900 p-4 flex items-center rounded-3xl shadow-lg">
-                    <img src="./assets/images/f.png" width="50px" height="50px" alt="gift" class="w-12 h-12 mr-4">
+                    <img src="./material/images/f.png" width="50px" height="50px" alt="gift" class="w-12 h-12 mr-4">
                     <div>
-                        <p class="font-bold">Invite a friend</p>
+                        <p class="font-bold">Invite a friend & get coin</p>
                     </div>
                 </div>
             </div>
 
-            <h3 class="mt-6 mb-2">List of your friends (0)</h3>
+            <h3 class="mt-6 mb-2">List of your friends</h3>
             <div class="space-y-2">
                 <div class="space-y-2"></div>
             </div>
@@ -76,7 +76,7 @@
 
         document.getElementById('inviteButton').addEventListener('click', function () {
 
-            const textToCopy = "https://t.me/share/url?url=https://t.me/HorseBits_bot?start=" + chatId + "Join the Horse Coin snd start minning today!Let's earn together";
+            const textToCopy = "https://t.me/share/url?url=https://t.me/HorseBits_bot?start=" + chatId + "&text=Join%20me%20in%20HorseCoin%20and%20start%20mining%20today!%20Let's%20earn%20together!";
 
             navigator.clipboard.writeText(textToCopy).then(function () {
                 const copyMessage = document.getElementById('copyMessage');
@@ -86,7 +86,7 @@
                 setTimeout(function () {
                     copyMessage.classList.remove('block');
                     copyMessage.classList.add('hidden');
-                    window.location = "https://t.me/share/url?url=https://t.me/HorseBits_bot?start=" + chatId + "Join the Horse Coin snd start minning today!Let's earn togethe"
+                    window.location = "https://t.me/share/url?url=https://t.me/HorseBits_bot?start=" + chatId + "&text=Join%20me%20in%20HorseCoin%20and%20start%20mining%20today!%20Let's%20earn%20together!"
                 }, 2000);
             }).catch(function (err) {
                 console.error('Error in copying text: ', err);
